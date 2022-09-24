@@ -110,7 +110,7 @@ class App {
 
   onSelect = () => {
     
-    if (window.sunflower && counter < 1) {
+    if (window.sunflower && counter < 2) {
       counter = counter + 1
 
       // function dom(arr){
@@ -143,11 +143,11 @@ class App {
 
         console.log("this is an array: " + arrayofstring + " first element is: " + Number(arrayofstring[0][0])/2);
 
-        let midpointx = Number(arrayofstring[0][0]/2);
-        let midpointy = Number(arrayofstring[0][1]/2);
-        let midpointz = Number(arrayofstring[0][2]/2);
-        clone.position(midpointx,midpointy,midpointz);
-        this.scene.add(clone);
+        // let midpointx = Number(arrayofstring[0][0]/2);
+        // let midpointy = Number(arrayofstring[0][1]/2);
+        // let midpointz = Number(arrayofstring[0][2]/2);
+        // clone.position(midpointx,midpointy,midpointz);
+        // this.scene.add(clone);
         // const geo = new GeolocationSensor({ frequency: 1 });
         // geo.start();
         
