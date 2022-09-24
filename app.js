@@ -18,7 +18,7 @@
  * show an error.
  */
  
- (async function() {
+(async function() {
   const isArSessionSupported = navigator.xr && navigator.xr.isSessionSupported && await navigator.xr.isSessionSupported("immersive-ar");
   if (isArSessionSupported) {
     document.getElementById("enter-ar").addEventListener("click", window.app.activateXR)
@@ -32,7 +32,6 @@
  * and handle rendering on every frame.
  */
 let arrayofstring = [];
-let anotherar =[];
 let counter = 0;
 
 class App {
@@ -124,7 +123,6 @@ class App {
         
         const clone = window.sunflower.clone();
         clone.position.copy(this.reticle.position);
-        console.log(this.reticle.position + typeof this.reticle.position);
         this.scene.add(clone);
         console.log(typeof clone.position);
         const myJSON = JSON.stringify(clone.position);
@@ -139,15 +137,6 @@ class App {
         arrayofstring.push(thenum.split(','));
         // dom(arrayofstring)
         console.log(arrayofstring);
-
-
-        console.log("this is an array: " + arrayofstring + " first element is: " + Number(arrayofstring[0][0])/2);
-
-        // let midpointx = Number(arrayofstring[0][0]/2);
-        // let midpointy = Number(arrayofstring[0][1]/2);
-        // let midpointz = Number(arrayofstring[0][2]/2);
-        // clone.position(midpointx,midpointy,midpointz);
-        // this.scene.add(clone);
         // const geo = new GeolocationSensor({ frequency: 1 });
         // geo.start();
         
@@ -191,10 +180,8 @@ class App {
     if (pose) {
       // In mobile AR, we only have one view.
       const view = pose.views[0];
-      
 
-      // console.log(view)
-      //console.log((parseInt(pose.tranform.position.x)+parseInt(arrayofstring[0]))/2);
+      console.log(view)
 
       const viewport = this.xrSession.renderState.baseLayer.getViewport(view);
       this.renderer.setSize(viewport.width, viewport.height)
@@ -265,7 +252,6 @@ class App {
     this.camera.matrixAutoUpdate = false;
 
   }
-  
   
 };
 
